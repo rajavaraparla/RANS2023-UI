@@ -1,0 +1,108 @@
+<div class="stock-info-container">
+    <!-- Basic Information and Fundamentals Section -->
+    <div class="basic-and-fundamentals">
+      <!-- Basic Information Section -->
+      <div class="stock-section">
+        <h2>Basic Information</h2>
+        <div class="bordered-section">
+          <div class="basic-info">
+            <div class="basic-item">
+              <div class="info-label">
+
+              <strong>Symbol:</strong> {{stockData.Symbol}}
+              </div>
+            </div>
+            <div class="basic-item">
+              <div class="info-value">
+              <strong>Name:</strong> {{stockData.Company}}
+              </div>
+
+            </div>
+            <div class="basic-item">
+              <strong>Sector:</strong> {{stockData.sector}}
+            </div>
+            <div class="basic-item">
+                <strong>Exchange:</strong> {{stockData.Exchange}}
+            </div>
+            <div class="basic-item">
+                <strong>Price:</strong> {{stockData.Price}}
+            </div>
+            <div class="basic-item">
+                <strong>IPO Date:</strong> {{stockData.IPODate}}
+            </div>
+
+            
+            <div class="fundamental-item">
+                <strong>Shares Float:</strong> {{stockData.floatSharesStr}}
+            </div>
+            <div class="fundamental-item">
+                <strong>Institutions Count:</strong> {{stockData.institutionsCount}}
+            </div>
+            <div class="fundamental-item">
+                <strong>Market Cap:</strong> {{stockData.marketCapStr}}
+            </div>
+            <div class="fundamental-item">
+                <strong>Most Recent Q:</strong> {{stockData.mostRecentQuarter}}
+            </div>
+            <div class="fundamental-item">
+                <strong>Shares OutStanding:</strong> {{stockData.sharesOutstandingStr}}
+            </div>                      
+            <div class="fundamental-item">
+                <strong>Short Ratio:</strong> {{stockData.shortRatio}}
+            </div>                      
+
+            <!-- Add more fundamental information items as needed -->
+          </div>
+        </div>
+      </div>
+        <!-- News Section -->
+        <div class="news-section">
+          <h2>News</h2>
+          <div class="bordered-section">
+            <!-- <div class="basic-info"> -->
+              <!-- <div class="basic-item"> -->
+                <ul *ngFor='let news of stockData?.news'>
+                  <li>
+                    <a href="{{news.link}}" target="_blank">{{news.news_time}} ({{news.publisher}}) - {{news.title}}</a>
+                  </li>
+                </ul>
+            
+              </div>
+              <!-- Add more fundamental information items as needed -->
+            <!-- </div> -->
+          <!-- </div> -->
+        </div>
+    </div>
+    
+    <div class="stock-section">
+        <h2>Financials</h2>
+        <div class="bordered-section">
+          <table>
+            <thead>
+              <tr>
+                <th>Earnings Date</th>
+                <th>Quarter</th>
+                <th>Sales(millions)</th>
+                <th>Sales %</th>
+                <th>EPS</th>
+                <th>EPS %</th>
+                <th>Earnings Surprise</th>
+                <th>Price Change %</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let financialData of stockData.financials">
+                <td>{{ financialData['Earnings Date'] }}</td>
+                <td>{{ financialData.Quarter }}</td>
+                <td>{{ financialData['Sales(millions)'] }}</td>
+                <td>{{ financialData['Sales % Change'] }}</td>
+                <td>{{ financialData.EPS }}</td>
+                <td>{{ financialData['EPS % Change'] }}</td>
+                <td>{{ financialData['Earnings Surprise'] }}</td>
+                <td>{{ financialData['Price Change %'] }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>

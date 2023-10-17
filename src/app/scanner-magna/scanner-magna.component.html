@@ -1,0 +1,24 @@
+<div *ngIf="scansMAGNARecords$">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Stock</th>
+        <th>Sector</th>
+        <th>Price</th>
+        <th>Market Cap</th>
+        <th>Short Ratio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let scan of scansMAGNARecords$; index as i">
+        <td>{{ scan.Symbol }}</td>
+        <td>{{ scan.sector }}</td>
+        <td>{{ scan.Price }}</td>
+        <td>{{ scan.marketCapStr }}</td>
+        <td>{{ scan.shortRatio }}</td>        
+      </tr>
+    </tbody>
+  </table>  
+  </div>
+  
+

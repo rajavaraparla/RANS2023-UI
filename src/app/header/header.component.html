@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+<div class="header">
+  <a href="#default" class="logo">Market Insights IQ</a>
+  <div class="header-right">
+  <span></span>
+  <span class="toolbar-item-spacer"></span>
+  <!-- <div class="col-md-5"> -->
+    <!-- <div class="wrapper"> -->
+        <mat-form-field >
+            <input class="" matInput placeholder="Search Stock" [(ngModel)]="selectedStock" [matAutocomplete]="auto"
+            [formControl]="searchStocksControl" placeholder="Select Stock Ex. AAPL">
+
+            <button *ngIf="selectedStock" matSuffix mat-icon-button aria-label="Clear" (click)="clearSelection()">
+              <mat-icon>close</mat-icon>
+            </button>
+            <mat-autocomplete [panelWidth]="400" #auto="matAutocomplete" (optionSelected)="onSelected()" [displayWith]="displayWith">
+              <mat-option *ngIf="isLoading" class="is-loading">Loading...</mat-option>
+              <ng-container *ngIf="!isLoading">
+                <mat-option *ngFor="let stock of filteredStocks" [value]="stock">
+                  <span><b>{{stock.Symbol}}</b> ({{stock.Name}})</span>
+                </mat-option>
+              </ng-container>
+            </mat-autocomplete>
+          </mat-form-field>
+      <ng-container *ngIf="errorMsg; else elseTemplate">
+        {{errorMsg}}
+      </ng-container>
+      <ng-template #elseTemplate>
+        <div class="movie-details" *ngIf="selectedStock?.Title">
+          <div>
+            <img [src]="selectedStock?.Poster" style="height: 250px;" />
+          </div>
+          <div>
+            <h3>Selected Value: {{selectedStock?.Title}}</h3>
+            <ul>
+              <li>Year: {{selectedStock?.Year}}</li>
+            </ul>
+          </div>
+        </div>
+      </ng-template>
+
+    <!-- </div> -->
+
+  <!-- </div> -->
+  <button mat-icon-button matTooltip="Like">
+      <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button matTooltip="Share">
+      <mat-icon>share</mat-icon>
+  </button>
+  <button mat-icon-button matTooltip="Notifications">
+      <mat-icon>notifications</mat-icon>
+  </button>
+  <button mat-icon-button matTooltip="My Account" [matMenuTriggerFor]="userAccountMenu">
+      <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #userAccountMenu [overlapTrigger]="false" yPosition="below">
+      <button mat-menu-item routerLink="#">
+          <mat-icon>person</mat-icon><span>My Account</span>
+      </button>
+      <button mat-menu-item routerLink="#">
+          <mat-icon>settings</mat-icon><span>Settings</span>
+      </button>
+      <button mat-menu-item routerLink="#">
+          <mat-icon>help</mat-icon><span>Help</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item routerLink="#">
+          <mat-icon>exit_to_app</mat-icon>Logout
+      </button>
+  </mat-menu>    
+  </div>
+</div>
+
+<div style="padding-left:20px">
+</div>
+
+</body>
+</html>

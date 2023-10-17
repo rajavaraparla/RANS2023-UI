@@ -1,0 +1,44 @@
+<div *ngIf="scans9MRecords">
+  <table ng-table ="9MTable" class="table table-striped">
+
+      <tr *ngFor="let scan of scans9MRecords">
+        <td data-title="'Stock'">{{scan.Symbol}}</td>
+        <td data-title="'Open'">{{scan.Open}}</td>
+        <td data-title="'High'">{{scan.High}}</td>
+        <td data-title="'Low'">{{scan.Low}}</td>
+        <td data-title="'Close'">{{scan.Close}}</td>
+        <td data-title="'Volume'">{{scan.Volume}}</td>
+      </tr>
+  </table>
+
+<div *ngIf="scansMAGNARecords">
+    console.log("scansMAGNARecords Exist")
+
+    <table ng-table ="MAGNATable" class="table table-striped">
+        <tr *ngFor="let scan of scansMAGNARecords">
+          <td data-title="'Stock'">{{scan.Symbol}}</td>
+          <td data-title="'Stock'">{{scan.sector}}</td>
+          <td data-title="'Price'">{{scan.Price}}</td>
+          <td data-title="'marketCap'">{{scan.marketCapStr}}</td>
+          <td data-title="'shortRatio'">{{scan.shortRatio}}</td>
+        </tr>
+    </table>
+    </div>  
+  
+  <!-- <div *ngIf="scans9MRecords">
+
+  <table ng-table ="9MTable" class="table table-striped">
+
+    <tr ng-repeat="user in scans9MRecords">
+    
+    <td data-title="'Stock'">{{user.name}}</td>
+    
+    <td data-title="'Open'">{{user.age}}</td>
+    
+    <td data-title="'High'">{{user.location}}</td>
+    <td data-title="'Volume'">{{user.location}}</td>
+    
+    </tr>
+    
+    </table>
+</div> -->
