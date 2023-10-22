@@ -6,14 +6,13 @@ body{
     .footer{
     background:#ddd;
     padding:0px 0px;
-    /* font-family: 'Play', sans-serif; */
     text-align:center;
     }
     
     .footer .row{
     width:100%;
-    margin:1% 0%;
-    padding:0.6% 0%;
+    /* margin:1% 0%; */
+    padding:0.2% 0%;
     color:gray;
     font-size:0.8em;
     }
@@ -34,7 +33,7 @@ body{
     
     .footer .row ul li{
     display:inline-block;
-    margin:0px 30px;
+    margin:0px 5px;
     }
     
     .footer .row a i{
@@ -49,10 +48,10 @@ body{
     }
     .footer .row ul li{
     display:block;
-    margin:10px 0px;
+    margin:3px 0px;
     text-align:left;
     }
     .footer .row a i{
     margin:0% 3%;
     }
-    }
+}

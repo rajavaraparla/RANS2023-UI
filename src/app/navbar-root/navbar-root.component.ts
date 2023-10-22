@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-navbar-root',
@@ -10,6 +11,11 @@ export class NavbarRootComponent {
   showSubmenu: boolean = false;
   isShowing = false;
   showSubSubMenu: boolean = false;
+  
+  @ViewChild('sidenav') sidenav!: MatSidenav; // Provide an initializer using '!'
+  toggleSidebar() {
+    this.sidenav.toggle();
+  }
 
   // Define the getScannerData method
   getScannerData(scanner: string) {
