@@ -7,15 +7,13 @@
           <th>Trade Date</th>
           <th>Up</th>
           <th>Down</th>
-          <!-- <th>Total</th> -->
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let scan of MM4PRecords$; index as i" [ngClass]="getRowColor(scan)">
-          <td>{{ scan["TradeDate"] | date : "MM/dd/yyyy" }}</td>
-          <td>{{ scan.Up }}</td>
+        <tr *ngFor="let scan of MM4PRecords$" [ngClass]="getRowColor(scan)">
+          <td>{{ formatAndAddDay(scan["TradeDate"]) }}</td>
+            <td>{{ scan.Up }}</td>
           <td>{{ scan.Down }}</td>
-          <!-- <td>{{ scan.Total }}</td> -->
         </tr>
       </tbody>
     </table>

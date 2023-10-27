@@ -19,6 +19,7 @@ export class MarketMonitorComponent {
       this.mm4pService.getMM4PStocks().subscribe(
         (data) => {
           this.MM4PRecords$ = data
+          console.log(this.MM4PRecords$);
         },
         (error) => {
           console.error('Error fetching 4P stocks:', error);
@@ -33,4 +34,11 @@ export class MarketMonitorComponent {
         return 'green-row';
       }
     }
+  // Function to format a date and add a day
+  formatAndAddDay(inputDate: string): string {
+    const date = new Date(inputDate);
+    date.setDate(date.getDate() + 1);
+    return date.toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
+  }
+
 }
