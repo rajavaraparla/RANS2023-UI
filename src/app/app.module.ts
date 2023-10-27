@@ -26,10 +26,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 
 import { StockFundamentalsComponent } from './stock-fundamentals/stock-fundamentals.component';
 import { ScannerNinemillionComponent } from './scanner-ninemillion/scanner-ninemillion.component';
 import { ScannerMagnaComponent } from './scanner-magna/scanner-magna.component';
+import { LoadEarningsFileQComponent } from './load-earnings-file-q/load-earnings-file-q.component';
+import { MarketMonitorComponent } from './market-monitor/market-monitor.component';
 
 
 @NgModule({
@@ -46,7 +49,9 @@ import { ScannerMagnaComponent } from './scanner-magna/scanner-magna.component';
     TestComponent,
     StockFundamentalsComponent,
     ScannerNinemillionComponent,
-    ScannerMagnaComponent
+    ScannerMagnaComponent,
+    LoadEarningsFileQComponent,
+    MarketMonitorComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +74,7 @@ import { ScannerMagnaComponent } from './scanner-magna/scanner-magna.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatInputModule,
+    MatCardModule,
     CollapseModule.forRoot(),
   ],
   providers: [],

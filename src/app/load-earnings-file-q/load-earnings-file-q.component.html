@@ -1,0 +1,12 @@
+<div>
+<mat-card>
+    <mat-card-content>
+      <input type="file" (change)="onFileSelected($event)">
+      <button mat-raised-button (click)="onUpload()">Upload</button>
+    </mat-card-content>
+</mat-card>
+</div>
+
+<div *ngIf="responseMessage">
+    {{ responseMessage }}
+</div>
