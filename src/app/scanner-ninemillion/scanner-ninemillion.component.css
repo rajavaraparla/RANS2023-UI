@@ -1,10 +1,45 @@
-/* Structure */
-table {
-    width: 100%;
-  }
-  
-  .mat-mdc-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
-  
+/* styles.css or your component-specific CSS */
+.table-container {
+  margin-top: 20px;
+  margin-left: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+
+}
+
+.table-container table {
+  width: 500px;
+  border-collapse: collapse;
+}
+
+/* Apply styles to header row */
+.table-container .header-row th {
+  background-color: blue; /* Header background color */
+  color: white; /* Header text color */
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left; /* Adjust text alignment */
+  padding: 8px; /* Add padding for spacing */
+}
+
+/* Apply styles to table rows */
+.table-container tbody tr {
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Highlight row on hover */
+.table-container tbody tr:hover {
+  background-color: lightgray; /* Hover background color */
+  cursor: pointer;
+}
+
+/* Apply styles to specific rows based on conditions */
+.table-container .red-row {
+  background-color: red;
+  color: white;
+}
+
+.table-container .green-row {
+  background-color: green;
+  color: white;
+}

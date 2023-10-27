@@ -1,13 +1,28 @@
+
 <div *ngIf="scans9MRecords">
-    <table ng-table ="9MTable" class="table table-striped">
-  
-        <tr *ngFor="let scan of scans9MRecords">
-          <td data-title="'Stock'">{{scan.Symbol}}</td>
-          <td data-title="'Open'">{{scan.Open}}</td>
-          <td data-title="'High'">{{scan.High}}</td>
-          <td data-title="'Low'">{{scan.Low}}</td>
-          <td data-title="'Close'">{{scan.Close}}</td>
-          <td data-title="'Volume'">{{scan.Volume}}</td>
+  <div class="table-container">
+    <table class="table-bordered table-hover table-striped">
+      <thead>
+        <tr class="header-row">
+          <th>Symbol</th>
+          <th>Open</th>
+          <th>High</th>
+          <th>Low</th>
+          <th>Close</th>
+          <th>Volume</th>
         </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rec of scans9MRecords" >
+            <td>{{ rec.Symbol }}</td>
+            <td>{{ rec.Open }}</td>
+            <td>{{ rec.High }}</td>
+            <td>{{ rec.Low }}</td>
+            <td>{{ rec.Close }}</td>
+            <td>{{ rec.Volume }}</td>
+
+          </tr>
+      </tbody>
     </table>
-  
+  </div>
+</div>
