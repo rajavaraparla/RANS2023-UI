@@ -6,6 +6,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 })
 export class Mm4pService {
   server = 'http://localhost:5000';
+  server = '';
   constructor(private http: HttpClient) {}
   getMM4PStocks() {
     const url = `${this.server}/v1/filters/mm_4_percent_last_ndays`;

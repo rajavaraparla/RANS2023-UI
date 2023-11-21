@@ -12,6 +12,7 @@ export class LoadEarningsFileQComponent {
   selectedFile: File | undefined;
 
   server = "http://localhost:5000"
+  server = ""
   responseMessage: string = '';
 
   constructor(private http: HttpClient) {}

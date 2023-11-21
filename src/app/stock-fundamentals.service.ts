@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StockFundamentalsService {
   private server = "http://localhost:5000"
+  private server = ""
 
   constructor(private http: HttpClient) {}
 

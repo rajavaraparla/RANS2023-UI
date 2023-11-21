@@ -9,6 +9,7 @@ import { Observable, catchError, of } from 'rxjs';
 export class SearchService {
   private autoCompleteList: { Symbol: string, Name: string }[] = [];
   private server = "http://localhost:5000"
+  private server = ""
   private apiUrl = `${this.server}/v1/data/stocks-list`;
   private httpOptions = {
     headers: new HttpHeaders({
